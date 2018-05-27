@@ -13,6 +13,8 @@ until false; do
   fi
 done
 
+echo "======================================"
 echo "Tip of the day..."
 echo "======================================"
 echo "$PHRASE"
+echo ""
