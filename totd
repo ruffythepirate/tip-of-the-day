@@ -1,8 +1,17 @@
 #!/bin/zsh
 
 LINES=$(wc ~/.tips | awk '{$1=$1;print}' | cut -d' ' -f1)
-MY_RANDOM=$(shuf -i 1-$LINES -n1)
-PHRASE=$(tail -n$MY_RANDOM ~/.tips | head -n1)
+
+
+until false; do
+  MY_RANDOM=$(shuf -i 1-$LINES -n1)
+  PHRASE=$(tail -n$MY_RANDOM ~/.tips | head -n1 | awk '{$1=$1;print}')
+  #This adds support for comments in the tips
+  # If a row is found that starts with # we will find a new phrase
+  if [[ ${PHRASE:0:1} != "#" ]] then 
+    break 
+  fi
+done
 
 echo "Tip of the day..."
 echo "======================================"

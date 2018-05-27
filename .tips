@@ -1,3 +1,4 @@
+# TERMINAL TIPS.
 In the bash you can navigate backwards and forwards between words by using `alt+b` or `alt+f`
 You can delete the current word in bash by typing `alt+delete`
 You can navigate to the start and end of the terminal line by using `ctrl+a` and `ctrl+e`
