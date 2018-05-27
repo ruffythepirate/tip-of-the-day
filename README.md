@@ -4,5 +4,5 @@ Tip of the day is a simple shell script that prints one random line out of a `~/
 
 # INSTALLATION
 
-You can either manually copy `totd` (tip of the day) into `~/bin` and then manually `.tips` into `~/.tips` or you can run the included `install.sh`. If you want a tip on bash startup, then add `totd` as an independent line in `.profile`.
+You can either manually copy `totd` (tip of the day) into `~/bin` and then manually `.tips` into `~/.tips` or you can run the included `install.sh`. If you want a tip on bash startup, then add `totd` as an independent line in your shell's initialization file.
 
