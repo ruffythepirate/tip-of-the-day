@@ -1,6 +1,7 @@
 echo "COPYING FILES INTO CORRECT PLACES"
 
-cp ./.tips ~ -v
-cp ./totd ~/bin -v
+install_path=$(dirname "$0")
+cp $install_path/.tips ~ -v
+cp $install_path/totd ~/bin -v
 
 echo "DONE"
