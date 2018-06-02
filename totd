@@ -1,5 +1,4 @@
-#!/bin/zsh
-
+#!/bin/sh
 ALL=$(cat ~/.tips)
 
 LINES=$(echo "$ALL" | wc ~/.tips | awk '{$1=$1;print}' | cut -d' ' -f1)
@@ -10,7 +9,8 @@ until false; do
   PHRASE=$(echo "$ALL" | head -n$MY_RANDOM | tail -n1 | awk '{$1=$1;print}')
   #This adds support for comments in the tips
   # If a row is found that starts with # we will find a new phrase
-  if [[ ${PHRASE:0:1} != "#" ]] then 
+  if [[ ${PHRASE:0:1} != "#" ]] 
+  then 
     break 
   fi
 done
