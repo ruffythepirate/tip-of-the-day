@@ -1,6 +1,6 @@
 # INTRODUCTION
 
-Tip of the day is a simple shell script that prints one random line out of a `~/.tips` file when being called. You can configure this script to be run upon shell startup.
+Tip of the day is a simple shell script that prints one random line out of any file in `~/.totd/` when being called. You can configure this script to be run upon shell startup.
 
 # INSTALLATION
 
