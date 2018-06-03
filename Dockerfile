@@ -1,6 +1,6 @@
 FROM busybox
 
-COPY .tips /root/
+COPY .totd/* /root/.totd/
 COPY totd /bin/
 
-CMD [ "totd" ]
+ENTRYPOINT [ "totd" ]

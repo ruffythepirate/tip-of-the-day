@@ -1,10 +1,37 @@
 #!/bin/sh
-ALL=$(cat ~/.tips)
 
-LINES=$(echo "$ALL" | wc ~/.tips | awk '{$1=$1;print}' | cut -d' ' -f1)
+set -e
 
+#This code is used to be able to filter which files to read tips from.
+if [ "$#" -eq 0 ];
+then
+  GREP_ARGS="-e ."
+else
+  GREP_ARGS=""
+  FILES=""
+  while [ "$1" != "" ]; do
+    if [ -z $FILES ]
+    then
+      FILES=$1
+    else
+      FILES="$FILES $1"
+    fi
+    GREP_ARGS="$GREP_ARGS -e .totd/${1}" && shift;
+  done;
+fi
 
-until false; do
+TARGET_FILES=$(ls -rtd ~/.totd/* | grep $GREP_ARGS)
+if [ -z "$TARGET_FILES" ] 
+then 
+  echo "Could not find any of the tip files: [$FILES]"
+  exit -1
+fi
+
+ALL=$(cat $TARGET_FILES) 
+
+LINES=$(echo "$ALL" | wc | awk '{$1=$1;print}' | cut -d' ' -f1)
+TRIES=0
+until [ $TRIES -gt 5 ]; do
   MY_RANDOM=$(shuf -i 1-$LINES -n1)
   PHRASE=$(echo "$ALL" | head -n$MY_RANDOM | tail -n1 | awk '{$1=$1;print}')
   #This adds support for comments in the tips
@@ -13,6 +40,7 @@ until false; do
   then 
     break 
   fi
+  TRIES=$(($TRIES+1))
 done
 
 CATEGORY=$(echo "$ALL" | head -n$MY_RANDOM | grep ^# | tail -n1 | sed 's/#//' | xargs)
