@@ -1,0 +1,10 @@
+# TERMINAL TIPS
+In the bash you can navigate backwards and forwards between words by using `alt+b` or `alt+f`
+You can delete the current word in bash by typing `alt+delete` or `ctrl+w`
+You can navigate to the start and end of the terminal line by using `ctrl+a` and `ctrl+e`
+You can edit you current command in `vi` if you add `set -o vi` to you `.profile` file, and types `esc` while typing a command or by clicking `ctrl-x ctrl-e`
+Take an hour and learn vim. Run `vimtutor` in the terminal.
+`ctrl+c` kills a process. `ctrl+z` halts a process. Afterwards you can run `fg` (foreground) or `bg` to continue the process in the foreground or the background.
+`ctrl+r` lets you search your command history for a previous command.
+`history | grep <keyword>` will show you previous commands you've done with a keyword.
+You want to become better with the terminal? Install oh my zsh (https://github.com/robbyrussell/oh-my-zsh)
