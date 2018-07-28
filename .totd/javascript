@@ -1,0 +1,2 @@
+#Javascript - Jest
+If you want to test a single test in jest you can either run `npm run test -- -t '<unique string for your test>'` or you can change your `it` to `it.only`
