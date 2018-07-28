@@ -9,3 +9,5 @@ Take an hour and learn vim. Run `vimtutor` in the terminal.
 `history | grep <keyword>` will show you previous commands you've done with a keyword.
 You want to become better with the terminal? Install oh my zsh (https://github.com/robbyrussell/oh-my-zsh)
 In the prompt you can type `!:<n> <space>` to get the n-th parameter of you last command. `!^` gets the first, `!$` gets the last.
+Do you want to find a specific file? You can use `locate <filename>` to see where it is located.
+Wondering about a command? `whatis <command name>` will give you a brief explanation.
