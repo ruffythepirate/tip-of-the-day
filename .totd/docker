@@ -1,0 +1,2 @@
+#Docker
+You can fill your mysql docker image with data by mounting your shell scripts and sql files into `/docker-entrypoint-initdb.d` with `-v $PWD:docker-entrypoint-initdb.d`. All `.sh` and `.sql` files there will be executed in alphabetical order.
